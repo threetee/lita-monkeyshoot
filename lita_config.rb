@@ -26,17 +26,17 @@ Lita.configure do |config|
   ## Example: Set options for the Redis connection.
   # config.redis.host = "127.0.0.1"
   # config.redis.port = 1234
-  config.redis[:url] = ENV["REDISTOGO_URL"]
+  config.redis[:url] = ENV["REDISTOGO_URL"] || 'redis://localhost:6379/0'
 
   ## Example: Set configuration for any loaded handlers. See the handler's
   ## documentation for options.
   # config.handlers.some_handler.some_config_key = "value"
   
   # Heroku wants your app to be listening on HTTP or else it kills it
-  config.http.port = ENV["PORT"]
+  config.http.port = ENV["PORT"] || 8080
 
-  config.handlers.destiny.api_key = ENV["DESTINY_API_KEY"]
+  config.handlers.destiny.api_key = ENV["DESTINY_API_KEY"] || ''
 
   config.robot.adapter = :slack
-  config.adapters.slack.token = ENV["SLACK_API_KEY"]
+  config.adapters.slack.token = ENV["SLACK_API_KEY"] || ''
 end
