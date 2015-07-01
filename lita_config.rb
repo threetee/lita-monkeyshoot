@@ -33,7 +33,7 @@ Lita.configure do |config|
   # config.handlers.some_handler.some_config_key = "value"
   
   # Heroku wants your app to be listening on HTTP or else it kills it
-  config.http.port = 80
+  config.http.port = ENV["PORT"]
 
   config.handlers.destiny.api_key = ENV["DESTINY_API_KEY"]
 
