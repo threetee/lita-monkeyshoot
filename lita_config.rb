@@ -32,6 +32,9 @@ Lita.configure do |config|
   ## documentation for options.
   # config.handlers.some_handler.some_config_key = "value"
   
+  # Heroku wants your app to be listening on HTTP or else it kills it
+  config.http.port = ENV["port"]
+
   config.handlers.destiny.api_key = ENV["DESTINY_API_KEY"]
 
   config.robot.adapter = :slack
