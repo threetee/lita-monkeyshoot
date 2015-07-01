@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "lita"
 gem "lita-destiny"
+gem "lita-slack"
 
 # Uncomment to use the HipChat adapter
 # gem "lita-hipchat"

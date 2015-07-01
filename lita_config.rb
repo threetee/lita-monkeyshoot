@@ -32,4 +32,7 @@ Lita.configure do |config|
   # config.handlers.some_handler.some_config_key = "value"
   
   config.handlers.destiny.api_key = ENV["DESTINY_API_KEY"]
+
+  config.robot.adapter = :slack
+  config.adapters.slack.token = ENV["SLACK_API_KEY"]
 end
